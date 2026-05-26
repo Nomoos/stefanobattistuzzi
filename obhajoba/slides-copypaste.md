@@ -1,234 +1,213 @@
-# Copy-paste sheet pro Google Slides / PowerPoint
+# Copy-paste sheet pro PowerPoint / Google Slides
 
-> **Pro koho:** Stefano, při manuální tvorbě/opravě slidů.
-> **Jak používat:** Otevři Google Slides → Blank prezentace (nebo stávající PPTX) → pro každý slide níže buď vytvoř nový slide, nebo přepiš existující obsah. Paste TITULEK + OBSAH + (volitelně) SPEAKER NOTES.
-> **Speaker notes:** v Google Slides klikni dolů na panel „Click to add speaker notes" — paste tam mluvený text. V PowerPointu klikni na View → Notes Page nebo na panel pod slidem.
+> **Pro koho:** Stefano, při manuální tvorbě/opravě slidů ve stávajícím PPTX nebo nové prezentaci.
+> **Závazná struktura:** podle školního vzoru `Orbis prezentace - final_vzor.pptx` — **7 slidů**.
+> **Jak používat:** Otevři PowerPoint → Stefanův stávající PPTX nebo nový z vzoru → pro každý slide níže buď přepiš obsah existujícího slidu, nebo vytvoř nový. Paste TITULEK + OBSAH + (volitelně) SPEAKER NOTES.
+> **Speaker notes:** v PowerPointu klikni dolů na panel „Click to add notes". V Google Slides View → Show speaker notes.
+
+---
+
+## ⚠️ Důležité: zachování školní šablony
+
+Vzor školy má 7 slidů. Stefanův stávající PPTX má 10 slidů (rozšíření). Doporučení: **přepsat na 7 slidů podle vzoru** — komise to ocení. Alternativně zachovat 10 slidů a opravit šablonové texty na slidech 6, 7, 8.
 
 ---
 
 ## SLIDE 1 — Titulní (0:30)
 
 ### TITULEK
-Webový portál CarzMeetz
-Platforma pro organizaci autosrazů
+Webový portál
+CarzMeetz — platforma pro organizaci autosrazů
 
 ### OBSAH
 Autor: Stefano Battistuzzi
 Třída: S4C · Obor: Informační technologie 18-20-M/01
 Rok: 2025/2026
 
-Vedoucí: Ing. Dalibor Slovák Ph.D., dipl. um.
-Oponent: Ing. Jakub Josef Forman
+Vedoucí práce: Ing. Dalibor Slovák Ph.D., dipl. um.
+Škola: ORBIS, MŠ/ZŠ/SŠ s.r.o., Zlín
 
-ORBIS Zlín
 Web: carzmeetz.euweb.cz
 
 ### SPEAKER NOTES
-Dobrý den, jmenuji se Stefano Battistuzzi a obhajuji maturitní práci na téma Webový portál CarzMeetz — platformu pro organizaci autosrazů. Vedoucím práce byl pan Slovák, oponentem pan Forman. Web je nasazený na adrese carzmeetz.euweb.cz. Pokud bude komise chtít, otevřu ho v rámci dotazů živě v prohlížeči.
+Dobrý den, jmenuji se Stefano Battistuzzi a obhajuji maturitní práci na téma Webový portál. V praktické části jsem realizoval konkrétní portál pro organizaci autosrazů s názvem CarzMeetz, který je nasazený na adrese carzmeetz.euweb.cz. Vedoucím práce byl pan Slovák. Pokud bude komise chtít, otevřu web v rámci dotazů živě v prohlížeči.
 
 ---
 
-## SLIDE 2 — Úvod, cíl a technologie (1:00)
+## SLIDE 2 — Úvod (1:30)
 
 ### TITULEK
-Úvod, cíl a technologie
+Úvod
 
 ### OBSAH
-Cíl projektu:
-Vytvořit moderní webový portál pro komunitu automobilových nadšenců — sdílení informací o autosrazech, registrace uživatelů, galerie.
+🎯 Téma
+Webový portál CarzMeetz pro komunitu automobilových nadšenců — osobní zájem o auta + reálná potřeba v komunitě.
 
-Použité technologie:
-| Vrstva | Použito |
-|--------|---------|
-| Backend | PHP (procedurální) |
-| Databáze | SQLite přes PDO |
-| Frontend | HTML5, CSS3 (mobile-first), vanilla JavaScript |
-| IDE | PhpStorm |
-| Hosting | euweb.cz · carzmeetz.euweb.cz |
+📌 Cíl práce
+„Ukázat problematiku tvorby webových stránek a portálů a demonstrovat jejich funkčnost na praktickém příkladu." — citace z úvodu MP
+Konkrétně: funkční web s databází pro zobrazování informací o srazech a registraci uživatelů.
 
-Záměrně bez moderního frameworku (Laravel, Symfony) — vědomá volba pro pochopení principů.
+⚙️ Postup zpracování
+1. Teoretická část — HTML, CSS, JavaScript, SQLite, historie webu
+2. Praktická část — návrh, implementace, nasazení webu CarzMeetz
+3. Iterativně: HTML → CSS → JavaScript → PHP → SQLite → hosting
 
 ### SPEAKER NOTES
-Cílem projektu bylo vytvořit moderní webový portál pro komunitu automobilových nadšenců, který umožňuje sdílení informací o autosrazech, registraci uživatelů a správu galerie. Web je responzivní a běží na webhostingu.
+Téma webového portálu jsem si zvolil ze dvou důvodů. Subjektivně — jsem osobně součástí komunity automobilových nadšenců a chtěl jsem pro tuto komunitu vytvořit konkrétní nástroj. Objektivně — webová prezentace přesahuje jen psaní HTML, zahrnuje práci s databází, bezpečnost, responzivní design a nasazení na hosting. To znamenalo, že jsem se musel naučit více oblastí najednou.
 
-Technologicky je projekt postaven na PHP s databází SQLite přes vrstvu PDO. Frontend je v čistém HTML5, CSS3 s mobile-first přístupem a vanilla JavaScriptu. Záměrně jsem nepoužil žádný moderní framework jako Laravel nebo Symfony — důvody rozeberu na příštím slidu. Vývojové prostředí bylo PhpStorm, web je nasazený na free hostingu euweb.cz.
+Cílem práce bylo ukázat problematiku tvorby webových stránek a portálů a demonstrovat jejich funkčnost na praktickém příkladu — což cituji ze své práce. Konkrétně jsem si dal za úkol vytvořit funkční web s databází, který bude umožňovat zobrazování informací o autosrazech a registraci uživatelů.
+
+Při zpracování jsem postupoval po fázích. V teoretické části jsem popsal historii webu, jednotlivé technologie HTML, CSS, JavaScript a databázový systém SQLite. V praktické části jsem nejprve navrhl strukturu webu, poté implementoval HTML kostru, doplnil CSS pro design, přidal JavaScript pro mobilní menu, PHP pro registraci a galerii, a nakonec vše propojil s SQLite databází. Web jsem nasadil na hosting webzdarma.cz pod doménou carzmeetz.euweb.cz.
 
 ---
 
-## SLIDE 3 — Architektura a implementace (2:00)
+## SLIDE 3 — Praktická část (2:30)
 
 ### TITULEK
-Architektura a implementace
+Praktická část
 
 ### OBSAH
-Struktura projektu:
-Prohlížeč (HTML + CSS + JS)
-        ↓ HTTP
-Webhosting euweb.cz
-  ├─ index.php · srazy.php · galerie.php · about.php · kontakt.php
-  ├─ register.php · login.php · hamburger.php (mobile menu)
-        ↓ PDO
-SQLite databáze: users.db · gallery.sqlite
+📋 Charakteristika tématu
+Webový portál CarzMeetz pro komunitu nadšenců v ČR. 6 hlavních stránek — Domů, Srazy, Galerie, O nás, Kontakt, Účet. 2 SQLite databáze — uživatelé + galerie. Responzivní design s mobilním hamburger menu.
 
-Proč žádný framework — tři důvody:
-1. Porozumění principům — Laravel abstrahuje routing, autentizaci, ORM. Bez něj jsem si je musel napsat sám.
-2. Velikost projektu — pro 6 prezentačních stránek by Laravel byl overkill.
-3. Snadné nasazení — FTP upload PHP souborů + SQLite, žádné composer install ani migrace.
+🔍 Použité analytické metody
+| Metoda | Popis |
+|--------|-------|
+| Srovnávací analýza | Konkurence: Srazy.info, FB skupiny |
+| Rešerše požadavků | Neformální dotazování v komunitě |
+| Návrh struktury | Definice MVP: registrace, galerie, info |
+| Iterativní vývoj | Postupně od statického HTML k PHP + DB |
+| Manuální testování | DevTools, W3C validátor, scénáře |
 
-Pro produkci bych přešel na Laravel kvůli vyzrálé autentizaci, CSRF ochraně, validaci a ORM Eloquent.
+❓ Proč tyto metody
+Vhodné pro komunitní projekt menšího rozsahu — kvalitativní přístup je dostatečný, akademický výzkum by byl overkill.
 
 ### SPEAKER NOTES
-Projekt má procedurální architekturu — žádný framework jako Laravel nebo Symfony. Každá stránka je samostatný PHP soubor, který kombinuje HTML šablonu s aplikační logikou. Databázová vrstva je řešena přes PDO s prepared statements.
+Charakteristika tématu. Webový portál CarzMeetz je platforma pro komunitu automobilových nadšenců v České republice. Slouží ke sdílení informací o autosrazech, registraci uživatelů a archivaci fotek z proběhlých akcí. Portál obsahuje šest hlavních stránek, dvě SQLite databáze a responzivní design pro mobilní zařízení.
 
-Klíčové rozhodnutí — proč jsem nepoužil moderní framework. Volba čistého PHP byla úmyslná, ze tří důvodů.
+Použité analytické metody. První metoda byla srovnávací analýza konkurenčních platforem. Studoval jsem zejména server Srazy.info a několik komunitních skupin na Facebooku — chtěl jsem ověřit, které funkce už existují a které uživatelům chybí. Druhá metoda byla rešerše komunitních požadavků — neformální dotazování v komunitě, ve které sám fungujem. Z toho vzešel seznam MVP funkcí: registrace, galerie, informace o srazech. Třetí metoda byla iterativní implementace — postupně jsem stavěl od statického HTML přes CSS až po dynamický PHP s databází. Čtvrtá metoda bylo manuální testování — procházel jsem všechny stránky, zkoušel registraci s různými hesly, ověřoval validitu HTML v W3C validátoru a responzivitu v Chrome DevTools v módech mobile, tablet i desktop.
 
-Za prvé, chtěl jsem rozumět tomu, jak weby fungují „pod kapotou". Frameworky jako Laravel abstrahují routing, autentizaci, ORM, šablonování. Bez frameworku jsem si tyto věci musel napsat sám, takže přesně vím, co se kde děje. Pokud později budu pracovat ve frameworku, budu mít pevný základ.
-
-Za druhé, pro projekt tohoto rozsahu by byl Laravel overkill. Web má pět prezentačních stránek, registraci a galerii — pět minimálně. Instalovat kvůli tomu Composer balíček s několika sty závislostmi nemělo smysl.
-
-Za třetí, jednodušší nasazení. Stačí nahrát PHP soubory a SQLite databázi přes FTP na hosting, žádné composer install, žádné databázové migrace, žádné kompilace assetů.
-
-Kdy bych framework použil. Pokud by projekt měl jít do produkce pro tisíce uživatelů, určitě bych přešel na Laravel — kvůli vyzrálé autentizaci s CSRF ochranou, validaci formulářů přes Request třídy, ORM Eloquent, migracemi databáze, queue pro odesílání e-mailů, a hlavně lepší bezpečnosti out-of-the-box. Pro maturitní práci ale byla volba čistého PHP správnější.
+Proč jsem zvolil tyto metody. Pro projekt menšího rozsahu jsou tyto kvalitativní metody dostatečné. Automatizované testy by byly overkill, marketingový výzkum konkurence by byl příliš formální. Cílem nebylo udělat akademickou studii, ale dodat fungující produkt pro reálnou komunitu.
 
 ---
 
-## SLIDE 4 — Bezpečnost a databáze (2:00)
+## SLIDE 4 — Projektové řešení (2:30)
 
 ### TITULEK
-Bezpečnost a databáze
-
-### OBSAH (tabulka)
-| ✅ Implementováno | ⚠️ Chybí pro produkci |
-|-------------------|----------------------|
-| password_hash() + bcrypt | HTTPS / TLS |
-| password_verify() | CSRF tokeny ve formulářích |
-| Prepared statements (PDO bindValue) | session_regenerate_id() po loginu |
-| htmlspecialchars() na výstupu (XSS) | Rate limiting na login |
-| session_start() v login | Verifikace e-mailu |
-|  | logout.php (odhlášení) |
-
-Ukázka kódu:
-// register.php — hash, ne plaintext
-$hash = password_hash($password, PASSWORD_DEFAULT);
-$stmt->bindValue(':password', $hash, PDO::PARAM_STR);
-
-// login.php — konstantní čas porovnání
-if (password_verify($password, $user['password_hash'])) {
-    $_SESSION['user_id'] = $user['id'];
-}
-
-SQLite — bez serveru, jeden soubor, vhodný pro maturitu. Limit: write-locking, žádný vzdálený přístup.
-
-### SPEAKER NOTES
-Bezpečnost a práce s databází je oblast, kde můj projekt udělal základní kroky správně, ale několik produkčních prvků zatím nemá.
-
-Co je v projektu hotové. Hesla se v databázi nikdy neukládají v plaintextu. Při registraci je hashuji funkcí password_hash() s výchozím algoritmem bcrypt, který automaticky generuje náhodnou sůl. Při loginu pak password_verify() v konstantním čase porovná zadané heslo s uloženým hashem. Všechny SQL dotazy používají prepared statements s pojmenovanými parametry přes bindValue() — uživatelský vstup se nikdy nelepí přímo do SQL stringu, takže riziko SQL injection je eliminováno. Při výpisu uživatelských dat používám htmlspecialchars() proti XSS. Po úspěšném loginu vytvořím PHP session a uložím do ní user_id.
-
-Databáze. Zvolil jsem SQLite ze tří důvodů: nepotřebuje samostatný databázový server, je to jeden soubor, PHP má vestavěnou podporu přes PDO. Pro malou komunitu nadšenců je výkon dostatečný. Hlavní limit SQLite je, že zamyká celý soubor při zápisu, takže pro vysoký objem souběžných zápisů by bylo nutné přejít na MySQL nebo PostgreSQL. Pro produkční verzi s mapou autosrazů by se hodil zejména PostgreSQL s rozšířením PostGIS pro geografická data.
-
-Co projektu chybí pro reálný provoz. Chybí mi HTTPS — free euweb HTTPS nepodporuje, na placeném hostingu by se přidalo přes Let's Encrypt. Chybí CSRF tokeny ve formulářích, rate limiting na login proti brute-force, verifikace e-mailu při registraci, regenerování session ID po loginu proti session fixation, a chybí odhlášení. Tyto věci uznávám jako mezery a v produkční verzi bych je doplnil.
-
----
-
-## SLIDE 5 — Vizuální ukázky webu (0:50)
-
-### TITULEK
-Vizuální ukázky webu
+Projektové řešení
 
 ### OBSAH
-• Homepage — hero sekce + sekce o klubu + statistiky
-• Registrace + Login — formuláře, login přes fetch() (AJAX)
-• Galerie — fotky dynamicky načítané z gallery.sqlite
-• Mobilní zobrazení — hamburger menu pod 768 px, CSS transition
+🏗️ Hlavní zásady řešení
+| Zásada | Detail |
+|--------|--------|
+| Procedurální PHP, bez frameworku | Vlastní implementace — pochopení principů |
+| SQLite + PDO | Embedded DB, jeden soubor, žádný server |
+| Bezpečné heslování | password_hash() bcrypt + password_verify() |
+| Prepared statements | bindValue() proti SQL injection |
+| Responzivní design | Mobile-first, hamburger pod 768 px |
 
-URL hostingu: carzmeetz.euweb.cz
-Web mám otevřený v prohlížeči — v rámci dotazů ho ukážu živě.
+💡 Co řešení přináší praxi
+- Funkční MVP komunitního portálu nasazený na hostingu
+- 6 testovacích uživatelů + 6 fotek v galerii (živě ověřeno)
+- Vlastní programátorský základ k pochopení jak weby fungují
+
+📌 Limity a budoucí kroky
+| Mezera | Plán pro produkční verzi |
+|--------|--------------------------|
+| Bez frameworku | Laravel (CSRF, auth, ORM) |
+| SQLite write-locking | PostgreSQL + PostGIS pro mapu autosrazů |
+| Free euweb bez HTTPS | placený hosting + Let's Encrypt |
+| Chybí CSRF, logout | doplnit pro reálný provoz |
 
 ### SPEAKER NOTES
-Web obsahuje šest hlavních stránek: domovskou, srazy, galerii, o nás, kontakt a registraci. Galerie je dynamická — fotky se načítají z SQLite databáze přes PDO query, takže administrátor může přidávat snímky bez úpravy kódu. Design je mobile-first, navigace na mobilu používá hamburger menu pod hranicí 768 pixelů, které se vysune zprava pomocí CSS transition. Web je nasazený na hostingu euweb.cz, v rámci dotazů ho otevřu živě, pokud bude komise chtít cokoliv vidět.
+Hlavní zásady navrhovaného řešení vycházejí ze tří klíčových rozhodnutí.
+
+První rozhodnutí — procedurální PHP, bez frameworku. Cíleně jsem se rozhodl nepoužít Laravel ani Symfony. Důvod je pedagogický — pro maturitní projekt jsem chtěl rozumět tomu, jak weby fungují „pod kapotou". Frameworky abstrahují routing, autentizaci, ORM. Bez nich jsem si tyto věci musel napsat sám, takže přesně vím, co se kde děje. Pro produkční verzi pro tisíce uživatelů bych Laravel zvolil — kvůli vyzrálé autentizaci a CSRF ochraně.
+
+Druhé rozhodnutí — SQLite jako databáze. SQLite jsem zvolil proto, že nepotřebuje samostatný server, je to jeden soubor a PHP má vestavěnou podporu přes PDO. Pro komunitu desítek uživatelů je výkon dostatečný. Hlavní limit SQLite je, že zamyká celý soubor při zápisu, takže pro vysoký objem souběžných zápisů by bylo nutné přejít na MySQL. Pro produkční verzi s mapou autosrazů by se hodil zejména PostgreSQL s rozšířením PostGIS pro geografická data.
+
+Třetí rozhodnutí — bezpečné heslování od začátku. Hesla se v databázi nikdy neukládají v plaintextu. Při registraci je hashuji funkcí password_hash() s algoritmem bcrypt, který automaticky generuje náhodnou sůl. Při loginu pak password_verify() v konstantním čase porovná zadané heslo s uloženým hashem. Všechny SQL dotazy používají prepared statements proti SQL injection. Při výpisu uživatelských dat používám htmlspecialchars() proti XSS.
+
+Co řešení přináší. Funkční MVP komunitního portálu nasazený na hostingu, šest registrovaných testovacích uživatelů a šest fotek v galerii — to znamená, že každá implementovaná funkce je živě ověřená.
+
+Limity a budoucí kroky. Uznávám, že pro reálný provoz by web potřeboval HTTPS, CSRF tokeny, regenerování session ID po loginu a logout — tyto mezery v posudku vedoucího uznávám a v produkční verzi bych je doplnil. Free euweb HTTPS aktuálně neumožňuje, ale na placeném hostingu by se přidalo přes Let's Encrypt zdarma.
 
 ---
 
-## SLIDE 6 — Analýza, metody a testování (1:20)
+## SLIDE 5 — Závěr (1:30)
 
 ### TITULEK
-Analýza, metody a testování
+Závěr
 
 ### OBSAH
-🔍 Analýza konkurence
-• Srazy.info (fórum pro autosrazy)
-• AutoMotoSrazy (Facebook skupiny)
-• Auto-srazy.eu (informační portál)
+✅ Dosažení cílů
+„Cíl se podařilo splnit — vytvořil jsem funkční web s databází, který umožňuje zobrazování informací o srazech a práci s nimi." — citace ze závěru MP
 
-📋 Metody návrhu
-• Rešerše požadavků komunity (neformální dotazování)
-• Definice MVP funkcí: registrace, galerie, info o srazech
-• Iterativní implementace HTML/CSS přímo v PhpStormu
+🎓 Jak mě práce obohatila
+- Rozšíření znalostí HTML, CSS, JavaScriptu a PHP
+- První zkušenost s databází SQLite + propojení s webem
+- Reálný projekt nasazený na hostingu
 
-🧪 Testování
-• Manuální průchod všemi stránkami
-• Responzivita: Chrome DevTools (mobile / tablet / desktop)
-• HTML validita: W3C validátor
+🔮 Pokračování práce
+Vytvoření webu v podobném stylu a další rozvoj — kalendář srazů, mapa, profily uživatelů, UX testování.
+
+🎯 Osobní přínos
+Vědomá volba vlastní implementace bez frameworku → hluboké porozumění tomu, jak weby fungují. Tuto znalost využiji v dalším studiu i praxi.
 
 ### SPEAKER NOTES
-Analytická část projektu vycházela ze srovnávací analýzy existujících platforem pro autosrazy. Studoval jsem zejména Srazy.info a několik komunitních skupin na Facebooku — chtěl jsem ověřit, které funkce už existují a které uživatelům chybí. Z toho vznikl seznam MVP funkcí: registrace, galerie, informace o srazech.
+Dosáhl jsem cílů, které jsem si stanovil? Ano. Cílem bylo vytvořit webovou aplikaci zaměřenou na autosrazy CarzMeetz a tento cíl se mi podařilo splnit — povedlo se mi vytvořit funkční web s databází, který umožňuje zobrazování informací o srazech a práci s nimi.
 
-Návrh jsem vedl iterativně. Nejprve jsem si rozkreslil základní layout pro hlavní stránky, pak jsem postupně implementoval HTML a CSS přímo v PhpStormu — bez Figmy nebo jiného grafického nástroje, protože pro projekt této velikosti to nebylo potřeba. Funkčnost backendu jsem řešil postupně: nejdřív statická HTML, pak databáze, pak registrace, pak galerie načítaná z DB.
+Jak mě práce obohatila. Během tvorby jsem si rozšířil znalosti v oblasti webových technologií, především HTML, CSS, JavaScriptu a PHP. Vyzkoušel jsem si práci s databází SQLite a její propojení s webovým portálem, což pro mě byla zcela nová zkušenost. Zároveň jsem si vyzkoušel nasazení vlastní aplikace na hosting, což je krok, který v běžné výuce často chybí.
 
-Testování bylo manuální — automatizované testy v projektu nejsou. Procházel jsem všechny stránky, zkoušel registraci s různými hesly, ověřoval responzivitu v Chrome DevTools v módech mobile, tablet i desktop. Pro validitu HTML jsem použil W3C validátor. V produkční verzi bych přidal PHPUnit unit testy alespoň pro password handling, ale pro maturitní rozsah jsem to nepovažoval za nutné.
+Jak pokračovat. Do budoucna bych chtěl vytvořit web v podobném stylu a dále jej rozvíjet — přidat dynamickou správu srazů s kalendářem, mapu autosrazů s geografickými souřadnicemi, profily uživatelů a komentáře k fotkám. Z bezpečnostního pohledu by bylo nutné doplnit HTTPS, CSRF tokeny a verifikaci e-mailu.
+
+Můj osobní přínos. Vědomá volba implementovat celý web vlastním kódem bez frameworku mi umožnila pochopit, jak weby fungují od HTML šablony až po databázi. Tuto zkušenost — že rozumím každému řádku kódu ve svém projektu — mohu využít v dalším studiu i v praxi. To je největší přínos, který mi maturitní práce dala.
 
 ---
 
-## SLIDE 7 — Slabá místa a rozšíření (1:50)
+## SLIDE 6 — Otázky komise (1:00)
 
 ### TITULEK
-Slabá místa a rozšíření
+Otázky komise
 
-### OBSAH (tabulka)
-| Mezera | Stav | Plán pro produkční verzi |
-|--------|------|--------------------------|
-| HTTPS chybí (free euweb HTTPS nemá) | nedostatek hostingu | placený hosting + Let's Encrypt |
-| CSRF tokeny ve formulářích | chybí | random token v session, ověření před submitem |
-| Logout + session_regenerate_id | chybí | logout.php + regenerování po loginu |
-| Verifikace e-mailu + rate limit | chybí | confirmation link, počítadlo neúspěšných pokusů |
-| Dokumentace popisná, ne technická | uznáno z posudku | doplnit architekturu + ER diagram |
-| Pravopis / čísla citací | uznáno z posudku | reference manager Zotero + korektura |
-| Žádný framework | vědomá volba | Laravel pro produkci |
-| Pouze SQLite | dostatečné pro maturitu | PostgreSQL + PostGIS pro mapu autosrazů |
+### OBSAH
+❓ Otázky vedoucího práce (Ing. Slovák)
+1. Jak funguje registrace a hashování hesla?
+   → bcrypt, prepared statements, PHP session (viz slide 4)
+2. Proč SQLite a jeho limity?
+   → embedded, zero-config, write-locking limit (viz slide 4)
+3. Bezpečnostní prvky pro reálný provoz?
+   → HTTPS, CSRF, rate limit, verifikace e-mailu, logout
+
+❓ Otázky oponenta (Ing. Forman)
+4. Výhody jiné databáze?
+   → MySQL pro konkurenci, PostgreSQL + PostGIS pro mapu autosrazů
+5. Proč žádný framework?
+   → vědomá volba pro pochopení principů, Laravel pro produkci (viz slide 4)
+
+Klíčová slova k odpovědím — všechny otázky pokrývá slide 4 (Projektové řešení).
 
 ### SPEAKER NOTES
-Závěrem chci sám zmínit body, které v práci považuji za slabší nebo mezery, na které mi posudky upozornily.
+Tímto má prezentace končí. Komise nyní dostane prostor pro vyjádření vedoucího práce a oponenta. Na tomto snímku mám připravený přehled pěti otázek, které mi byly položeny v posudcích, společně s klíčovými body, na které ve své odpovědi navážu. Na všechny tyto otázky jsem v prezentaci alespoň zčásti odpověděl — především v rámci slidu 4 o projektovém řešení. V Q&A rád jakoukoli odpověď rozvedu detailněji.
 
-HTTPS — toto je důležitá mezera. Free euweb hosting HTTPS neposkytuje, takže hesla a session cookies se aktuálně přenášejí v plaintextu. V produkční verzi bych přešel na placený hosting s Let's Encrypt certifikátem, který je zdarma a automaticky obnovovaný.
-
-CSRF tokeny a regenerování session ID — toto jsou oprávněné připomínky vedoucího v posudku. Můj projekt nemá obranu proti CSRF útokům ani proti session fixation. Doplnil bych random token uložený v session, který by se ověřoval při každém POST submitu, a po úspěšném loginu bych volal session_regenerate_id(true).
-
-Logout a verifikace e-mailu — také uznané mezery. Implementoval bych klasický logout.php se session_destroy() a confirmation link při registraci s tokenem v URL.
-
-Použití jiné databáze než SQLite — pokud bych projekt rozšiřoval do produkce, MySQL nebo MariaDB by přinesly podporu plně konkurentních zápisů, vzdálený přístup po síti a lepší správu uživatelů. Pro mou doménu — mapování autosrazů na území Česka — by se ale ideálně hodil PostgreSQL s rozšířením PostGIS pro geografická data a indexování souřadnic.
-
-Dokumentace a citace — pan vedoucí v posudku připomíná, že dokumentace praktické části je popsaná spíše uživatelsky a čísla citací v bibliografii jsou nesprávná. Obojí přijímám — pro další práci bych použil reference manager Zotero, který sleduje propojení odkazů, a dokumentaci bych rozšířil o technickou sekci s architekturou a schématem databáze.
+(Tento mluvený text je krátký záměrně — komise teď přijme slovo. Klíčová slova na slidu fungují jako vizuální opora pro Q&A, ne pro mluvený monolog.)
 
 ---
 
-## SLIDE 8 — Závěr (0:30)
+## SLIDE 7 — Děkuji za pozornost (0:30)
 
 ### TITULEK
 Děkuji za pozornost
 
 ### OBSAH
-✅ 6 stránek, registrace, galerie
-✅ bcrypt + prepared statements
-✅ responzivní design
-🔄 HTTPS + CSRF + logout (plán)
-🔄 Laravel + MySQL pro produkci
-🎯 Funkční portál nasazený na carzmeetz.euweb.cz
-🎯 Vlastní programátorský základ bez frameworku
+🌐 carzmeetz.euweb.cz
 
 Web mám otevřený v prohlížeči pro případné dotazy.
 
+Stefano Battistuzzi · S4C · 2025/2026
+
 ### SPEAKER NOTES
-Projekt splňuje stanovené cíle — vytvořil jsem funkční webový portál s registrací, galerií a informacemi o autosrazech, nasazený na hostingu. Hlavním přínosem je vlastní programátorský základ bez závislosti na frameworku, díky kterému jsem získal hluboké porozumění tomu, jak weby fungují. Pro produkční nasazení by bylo nutné doplnit HTTPS, CSRF ochranu, logout a zvážit přechod na Laravel s databází vhodnou pro geografická data. Děkuji za pozornost. Web mám otevřený v prohlížeči, takže pokud bude komise chtít cokoliv vidět živě, mohu se kdykoli přepnout. Jsem připraven na otázky.
+Děkuji za pozornost a za příležitost představit svou maturitní práci. Web mám otevřený v prohlížeči, takže pokud bude komise chtít cokoliv vidět živě, mohu se kdykoli přepnout. Jsem připraven na otázky.
 
 ---
 
@@ -238,38 +217,38 @@ Slidy 1, 3, 5 mohou mít obrázky:
 
 | Slide | Doporučený obrázek |
 |-------|---------------------|
-| 1 | Logo CarzMeetz (z `images/carzmeetz_logo1.png` v ZIPu projektu) vpravo dole |
-| 3 | Diagram struktury projektu (ASCII v OBSAH se dá nahradit pěkným box-and-arrow obrázkem) |
-| 5 | 4 thumbnaily v gridu 2×2: homepage, registrace, galerie, mobilní pohled s hamburgerem |
-| 7 | (nepotřeba — tabulka mluví sama) |
+| 1 | Logo CarzMeetz (z untitled/images/carzmeetz_logo1.png v ZIPu) vpravo dole |
+| 3 | Screenshoty 4 hlavních stránek webu — homepage, srazy, galerie, mobil |
+| 4 | Diagram architektury projektu (frontend → PHP → SQLite) NEBO ER diagram tabulek users + gallery |
+| 5 | (volitelně) Screenshot závěru práce — odkud cituji |
 
 Zdroje pro screenshoty:
 - Web: otevři carzmeetz.euweb.cz → příslušnou stránku → Print Screen (Win+Shift+S)
-- Mobilní pohled: Chrome DevTools → F12 → Toggle device toolbar (Ctrl+Shift+M) → vybrat iPhone/Pixel
-- Logo: z `untitled/images/carzmeetz_logo1.png` v rozbaleném ZIPu
+- Mobilní pohled: Chrome DevTools → F12 → Toggle device toolbar (Ctrl+Shift+M)
+- Logo: z untitled/images/carzmeetz_logo1.png v rozbaleném ZIPu battistuzzi_prace.zip
 
 ---
 
-## DESIGN SETTINGS pro Google Slides / PowerPoint
+## DESIGN SETTINGS pro PowerPoint / Google Slides
 
 - **Téma:** Simple Light nebo Basic (bílé pozadí — DOPORUČENO pro kmenovou třídu kvůli kontrastu)
-  - Alternativa: tmavé pozadí jak má stávající Stefanův PPTX — funguje, ale v třídě s denním světlem se hůř čte
+  - Stávající Stefanův PPTX má tmavé pozadí — pro denní světlo v třídě horší. Zvážit změnu.
 - **Fonty:**
-  - Title — **Orbitron** (sportovní/auto vibe) nebo Roboto, 36–42 pt
+  - Title — **Orbitron** (sportovní/auto vibe — stejný font jako web CarzMeetz) nebo Roboto, 36–42 pt
   - Body — Inter / Roboto / Open Sans, 22–26 pt
-- **Barvy** (auto-styl):
+- **Barvy** (CarzMeetz styl):
   - Pozadí: bílá (#FFFFFF) nebo světle šedá (#F5F5F5)
-  - Text: tmavě šedá (#1A1A1A) — NE čistá černá kvůli kontrastu
-  - Akcent (nadpisy, proužky): **CarzMeetz červená/oranžová** (#B30000 nebo #FF4500)
+  - Text: tmavě šedá (#1A1A1A)
+  - Akcent (nadpisy, proužky): **CarzMeetz červená** (#B30000)
   - Sekundární akcent: tmavě šedá (#333333)
-- **Tabulky:** hlavička barevná (akcent), řádky střídavě jemně podbarvené
-- **Page numbers:** zapnout (Slide → Layout → with footer)
+- **Tabulky:** hlavička červená (akcent), řádky střídavě jemně podbarvené
+- **Page numbers:** zapnout
 
 ---
 
 ## TIP: Generování přes Marp (rychlejší než ruční tvorba)
 
-Pokud Stefano nainstaloval Node.js / npm:
+Pokud Stefano má Node.js / npm:
 
 ```bash
 # Instalace Marp CLI (jednou)
@@ -282,6 +261,6 @@ marp prezentace.md --pptx --output prezentace-vygenerovana.pptx
 marp prezentace.md --html --output prezentace-vygenerovana.html
 ```
 
-Pak nahraj `prezentace-vygenerovana.pptx` do Google Slides nebo otevři v PowerPointu. **Marp vygeneruje formát, který je už hotový — stačí doplnit screenshoty.**
+Pak nahraj `prezentace-vygenerovana.pptx` do PowerPointu / Google Slides. **Marp vygeneruje formát, který je už hotový** — stačí doplnit screenshoty.
 
-Alternativa bez instalace: nahrát `prezentace.md` do online Marp editoru: https://web.marp.app
+Alternativa bez instalace: nahrát `prezentace.md` do online Marp editoru: **https://web.marp.app**

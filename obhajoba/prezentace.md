@@ -22,6 +22,10 @@ style: |
     color: #b30000;
     font-size: 32px;
   }
+  h3 {
+    color: #333333;
+    font-size: 24px;
+  }
   table {
     font-size: 22px;
     border-collapse: collapse;
@@ -56,6 +60,12 @@ style: |
     color: inherit;
     padding: 0;
   }
+  blockquote {
+    border-left: 4px solid #b30000;
+    padding-left: 16px;
+    color: #555;
+    font-style: italic;
+  }
   .small { font-size: 20px; }
   .tiny { font-size: 16px; }
   .center { text-align: center; }
@@ -69,9 +79,9 @@ style: |
 
 <!-- _class: lead -->
 
-# Webový portál CarzMeetz
+# Webový portál
 
-## Platforma pro organizaci autosrazů
+## CarzMeetz — platforma pro organizaci autosrazů
 
 <br>
 
@@ -80,151 +90,132 @@ style: |
 
 <br>
 
-**Vedoucí:** Ing. Dalibor Slovák Ph.D., dipl. um. · **Oponent:** Ing. Jakub Josef Forman
-**Škola:** ORBIS Zlín
+**Vedoucí práce:** Ing. Dalibor Slovák Ph.D., dipl. um.
+**Škola:** ORBIS, MŠ/ZŠ/SŠ s.r.o., Zlín
 
 <!-- Web nasazený na: carzmeetz.euweb.cz -->
 
 ---
 
-# Úvod, cíl a technologie
+# Úvod
 
-**Cíl projektu:** Vytvořit moderní webový portál pro komunitu automobilových nadšenců — sdílení informací o autosrazech, registrace uživatelů, galerie.
+### 🎯 Téma
 
-<br>
+Webový portál CarzMeetz pro komunitu **automobilových nadšenců** — osobní zájem o auta + reálná potřeba v komunitě.
 
-| Vrstva | Použito |
+### 📌 Cíl práce
+
+> „Ukázat problematiku tvorby webových stránek a portálů a demonstrovat jejich funkčnost na praktickém příkladu." — *citace z úvodu MP*
+
+Konkrétně: **funkční web s databází** pro zobrazování informací o srazech a registraci uživatelů.
+
+### ⚙️ Postup zpracování
+
+1. **Teoretická část** — HTML, CSS, JavaScript, SQLite, historie webu
+2. **Praktická část** — návrh, implementace, nasazení webu CarzMeetz
+3. **Iterativně:** HTML → CSS → JavaScript → PHP → SQLite → hosting
+
+---
+
+# Praktická část
+
+### 📋 Charakteristika tématu
+
+Webový portál CarzMeetz pro komunitu nadšenců v ČR. **6 hlavních stránek** — Domů, Srazy, Galerie, O nás, Kontakt, Účet. **2 SQLite databáze** — uživatelé + galerie. **Responzivní design** s mobilním hamburger menu.
+
+### 🔍 Použité analytické metody
+
+| Metoda | Popis |
 |---|---|
-| Backend | **PHP** (procedurální) |
-| Databáze | **SQLite** přes PDO |
-| Frontend | HTML5, CSS3 (mobile-first), vanilla JavaScript |
-| Vývojové IDE | PhpStorm |
-| Hosting | euweb.cz · web: **carzmeetz.euweb.cz** |
+| **Srovnávací analýza** | Studium konkurence: Srazy.info, FB skupiny |
+| **Rešerše požadavků** | Neformální dotazování v komunitě |
+| **Návrh struktury** | Definice MVP: registrace, galerie, info |
+| **Iterativní vývoj** | Postupně od statického HTML k PHP + DB |
+| **Manuální testování** | DevTools, W3C validátor, scénáře |
 
-<br>
+### ❓ Proč tyto metody
 
-> **Záměrně bez moderního frameworku** (Laravel, Symfony) — vědomá volba pro pochopení principů.
-
----
-
-# Architektura a implementace
-
-<div class="small">
-
-```text
-Prohlížeč (HTML + CSS + JS)
-        ↓ HTTP
-Webhosting euweb.cz
-  ├─ index.php · srazy.php · galerie.php · about.php · kontakt.php
-  ├─ register.php  · login.php  · hamburger.php (mobile menu)
-        ↓ PDO
-SQLite databáze: users.db · gallery.sqlite
-```
-
-</div>
-
-**Proč žádný framework — tři důvody:**
-
-1. **Porozumění principům** — Laravel abstrahuje routing, autentizaci, ORM. Bez něj jsem si je musel napsat sám.
-2. **Velikost projektu** — pro 6 prezentačních stránek by Composer + Laravel byl overkill.
-3. **Snadné nasazení** — FTP upload PHP souborů + SQLite, žádné `composer install`, žádné migrace.
-
-> **Pro produkci** bych přešel na **Laravel** kvůli vyzrálé autentizaci, CSRF ochraně, validaci a ORM Eloquent.
+Vhodné pro **komunitní projekt menšího rozsahu** — kvalitativní přístup je dostatečný, akademický výzkum by byl overkill.
 
 ---
 
-# Bezpečnost a databáze
+# Projektové řešení
 
-<div class="small">
+### 🏗️ Hlavní zásady
 
-| <span class="ok">✅ Implementováno</span> | <span class="warn">⚠️ Chybí pro produkci</span> |
+| Zásada | Detail |
 |---|---|
-| `password_hash()` + **bcrypt** | HTTPS / TLS |
-| `password_verify()` | CSRF tokeny ve formulářích |
-| **Prepared statements** (PDO `bindValue`) | `session_regenerate_id()` po loginu |
-| `htmlspecialchars()` na výstupu (XSS) | Rate limiting na login |
-| `session_start()` v login | Verifikace e-mailu při registraci |
-|  | `logout.php` (odhlášení) |
+| **Procedurální PHP**, bez frameworku | Vlastní implementace — pochopení principů |
+| **SQLite + PDO** | Embedded DB, jeden soubor, žádný server |
+| **Bezpečné heslování** | `password_hash()` bcrypt + `password_verify()` |
+| **Prepared statements** | `bindValue()` proti SQL injection |
+| **Responzivní design** | Mobile-first, hamburger pod 768 px |
 
-</div>
+### 💡 Co řešení přináší praxi
 
-```php
-// register.php — hash, ne plaintext
-$hash = password_hash($password, PASSWORD_DEFAULT);
-$stmt->bindValue(':password', $hash, PDO::PARAM_STR);
+Funkční MVP komunitního portálu nasazený na hostingu · **6 testovacích uživatelů + 6 fotek v galerii** · vlastní programátorský základ.
 
-// login.php — konstantní čas porovnání
-if (password_verify($password, $user['password_hash'])) {
-    $_SESSION['user_id'] = $user['id'];
-}
-```
-
-> **SQLite** — bez serveru, jeden soubor, vhodný pro maturitu. **Limit:** write-locking, žádný vzdálený přístup.
-
----
-
-# Vizuální ukázky webu
-
-<div class="small">
-
-- **Homepage** — hero sekce + sekce o klubu + statistiky
-- **Registrace + Login** — formuláře s validací, login přes `fetch()` (AJAX)
-- **Galerie** — fotky dynamicky načítané z `gallery.sqlite`
-- **Mobilní zobrazení** — hamburger menu pod 768 px, CSS transition
-
-</div>
-
-<br>
-
-> **URL hostingu:** [carzmeetz.euweb.cz](http://carzmeetz.euweb.cz)
-> *Web mám otevřený v prohlížeči — v rámci dotazů ho ukážu živě.*
-
-<!-- Doplnit screenshoty: 4 obrázky v gridu 2×2: homepage, registrace, galerie, mobilní pohled -->
-
----
-
-# Analýza, metody a testování
-
-<div class="small">
-
-**🔍 Analýza konkurence**
-
-- Srazy.info (fórum pro autosrazy)
-- AutoMotoSrazy (Facebook skupiny)
-- Auto-srazy.eu (informační portál)
-
-**📋 Metody návrhu**
-
-- Rešerše požadavků komunity (neformální dotazování)
-- Definice MVP funkcí: registrace, galerie, info o srazech
-- Iterativní implementace HTML/CSS přímo v PhpStormu
-
-**🧪 Testování**
-
-- Manuální průchod všemi stránkami
-- Responzivita: Chrome DevTools (mobile / tablet / desktop)
-- HTML validita: **W3C validátor**
-
-</div>
-
----
-
-# Slabá místa a rozšíření
+### 📌 Limity a budoucí kroky
 
 <div class="tiny">
 
-| Mezera | Stav | Plán pro produkční verzi |
-|---|---|---|
-| **HTTPS** chybí (free euweb HTTPS nemá) | nedostatek hostingu | placený hosting + **Let's Encrypt** |
-| **CSRF tokeny** ve formulářích | chybí | random token v session, ověření před submitem |
-| **Logout** + `session_regenerate_id` | chybí | `logout.php` + regenerování po loginu |
-| **Verifikace e-mailu** + rate limit | chybí | confirmation link, počítadlo neúspěšných pokusů |
-| **Dokumentace** popisná, ne technická | uznáno z posudku | doplnit architekturu + ER diagram |
-| **Pravopis / čísla citací** | uznáno z posudku | reference manager **Zotero** + korektura |
-| **Žádný framework** | vědomá volba | **Laravel** pro produkci |
-| **SQLite** | dostatečné pro maturitu | **PostgreSQL + PostGIS** pro mapu autosrazů |
+| Mezera | Plán pro produkční verzi |
+|---|---|
+| Bez frameworku → procedurální | **Laravel** pro produkci (CSRF, auth, ORM) |
+| SQLite write-locking | **PostgreSQL + PostGIS** pro mapu autosrazů |
+| Free euweb bez HTTPS | placený hosting + **Let's Encrypt** |
+| Chybí CSRF, logout, regenerate session | doplnit pro reálný provoz |
 
 </div>
+
+---
+
+# Závěr
+
+### ✅ Dosažení cílů
+
+> „Cíl se podařilo splnit — vytvořil jsem funkční web s databází, který umožňuje zobrazování informací o srazech a práci s nimi." — *citace ze závěru MP*
+
+### 🎓 Jak mě práce obohatila
+
+- Rozšíření znalostí **HTML, CSS, JavaScriptu a PHP**
+- První zkušenost s databází **SQLite** + propojení s webem
+- Reálný projekt **nasazený na hostingu**
+
+### 🔮 Pokračování práce
+
+Vytvoření web v podobném stylu a další rozvoj — kalendář srazů, mapa, profily uživatelů, UX testování.
+
+### 🎯 Osobní přínos
+
+**Vědomá volba vlastní implementace bez frameworku** → hluboké porozumění tomu, jak weby fungují. Tuto znalost využiji v dalším studiu i praxi.
+
+---
+
+# Otázky komise
+
+### ❓ Otázky vedoucího práce (Ing. Slovák)
+
+<div class="small">
+
+1. **Jak funguje registrace a hashování hesla?** → bcrypt, prepared statements, PHP session *(viz slide 4)*
+2. **Proč SQLite a jeho limity?** → embedded, zero-config, write-locking limit *(viz slide 4)*
+3. **Bezpečnostní prvky pro reálný provoz?** → HTTPS, CSRF, rate limit, verifikace e-mailu, logout
+
+</div>
+
+### ❓ Otázky oponenta (Ing. Forman)
+
+<div class="small">
+
+4. **Výhody jiné databáze?** → MySQL pro konkurenci · **PostgreSQL + PostGIS pro mapu autosrazů**
+5. **Proč žádný framework?** → vědomá volba pro pochopení principů · **Laravel pro produkci**
+
+</div>
+
+<br>
+
+> *Klíčová slova k odpovědím — všechny otázky pokrývá slide 4 (Projektové řešení).*
 
 ---
 
@@ -234,16 +225,12 @@ if (password_verify($password, $user['password_hash'])) {
 
 <br>
 
-<div class="small">
-
-| ✅ Hotovo | 🔄 Rozšiřitelné | 🎯 Výsledek |
-|----------|----------------|-------------|
-| 6 stránek, registrace, galerie | HTTPS + CSRF + logout | funkční portál |
-| bcrypt + prepared statements | Laravel + MySQL pro produkci | vlastní programátorský základ |
-| responzivní design | technická dokumentace | nasazený na **carzmeetz.euweb.cz** |
-
-</div>
+## 🌐 carzmeetz.euweb.cz
 
 <br>
 
 **Web mám otevřený v prohlížeči pro případné dotazy.**
+
+<br>
+
+*Stefano Battistuzzi · S4C · 2025/2026*

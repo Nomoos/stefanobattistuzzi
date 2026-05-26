@@ -3,23 +3,28 @@
 Podklad pro lektora na konzultaci se Stefanem Battistuzzim.
 
 **Projekt:** Webový portál CarzMeetz pro organizaci autosrazů
+**Plný název práce:** **Webový portál** *(praktická realizace: CarzMeetz)*
 **Vedoucí práce:** Ing. Dalibor Slovák Ph.D., dipl. um.
-**Stack (odvozeno z otázek na slidu 9):** čisté PHP + SQLite, bez moderního frameworku, vývoj v PhpStorm
+**Oponent:** Ing. Jakub Josef Forman
+**Stack:** čisté PHP + SQLite, bez moderního frameworku, vývoj v PhpStorm
 **Existující soubor:** `battistuzzi_obhajoba.pptx` (10 slidů)
+**Závazná šablona:** `Orbis prezentace - final_vzor.pptx` (7 slidů)
+
+> **⚠️ DŮLEŽITÉ PŘEHODNOCENÍ:** Po obdržení školního vzoru `Orbis prezentace - final_vzor.pptx` jsem zjistil, že **slidy 6 a 7 v Stefanově PPTX neobsahují placeholdery v technickém smyslu** — obsahují **navádějící otázky ze závazné školní šablony** („Jaké jsou hlavní zásady/principy?", „Vlastní analýzy — jaké metody?", „V čem spočívá Váš osobní přínos?"). Stefano je měl **vlastními slovy odpovědět**, ne smazat. Stejně tak slide 9 „Otázky" je legitimní — vzor ho přímo doporučuje. Detailní 7slide plán prezentace podle vzoru najdete v `obhajoba/PREZENTACE-OBHAJOBA.md`.
 
 ---
 
 ## 1. Shrnutí stavu prezentace
 
-Prezentace má rozumnou kostru (titulní → úvod → tvorba → charakteristika → analýza → projektové řešení → závěr → otázky → poděkování), ale **trpí třemi vážnými problémy, které musí Stefano před obhajobou opravit**:
+Prezentace má rozumnou kostru, která vychází ze školního vzoru, ale **slidy 6, 7 a poslední věta slidu 8 obsahují nevyplněné navádějící otázky** — Stefano je opomněl nahradit svými odpověďmi.
 
 ### 🔴 Kritické problémy
 
 | # | Problém | Slide | Řešení |
 |---|---------|-------|--------|
-| 1 | **Nevyplněný šablonový text z osnovy** | 6, 7 | Smazat instrukce, doplnit vlastní obsah |
-| 2 | **Duplicitní nadpis** „Charakteristika tématu" | 4 i 6 | Slide 6 přejmenovat (např. „Použité metody analýzy") |
-| 3 | **Slide 8 obsahuje placeholder otázku** | 8 | Smazat větu „V čem přesně spočívá Váš osobní přínos…" |
+| 1 | **Nevyplněný šablonový text — navádějící otázky** | 6, 7 | Vlastními slovy odpovědět na otázky ve vzoru („Vlastní analýzy — jaké metody?" a „Hlavní zásady řešení?") |
+| 2 | **Duplicitní nadpis** „Charakteristika tématu" | 4 i 6 | Slide 6 přejmenovat na „Použité analytické metody" |
+| 3 | **Slide 8 obsahuje navádějící otázku** | 8 | Nahradit větu „V čem přesně spočívá Váš osobní přínos…" vlastní odpovědí |
 
 ### 🟡 Sekundární problémy
 
@@ -138,12 +143,12 @@ Sem se hodí 1–2 screenshoty — homepage + detail srazu.
 
 ---
 
-### Slide 9 — Otázky 🎯
-**Stav:** Tento slide obsahuje 5 otázek. Není zcela jasné, zda jsou to:
-- (a) otázky, které **Stefano očekává od komise**, nebo
-- (b) otázky, které **chce sám prezentovat a zodpovědět**.
+### Slide 9 — Otázky ✅
+**Stav:** **LEGITIMNÍ podle školního vzoru.** Vzor `Orbis prezentace - final_vzor.pptx` přímo doporučuje: *„Doporučuje se na tento snímek umístit otázky oponenta (vedoucího), případně podstatné informace k Vašim odpovědím, na něž se dostane po přečtení posudků."*
 
-Doporučuji v prezentaci **otázky vůbec neuvádět** (komise si je položí sama). Místo toho použít slide na **technické detaily / ukázku kódu** (např. snippet `password_hash()` + prepared statement). **Otázky si Stefano musí umět odpovědět tak jako tak** — viz sekce 3 níže.
+Slide obsahuje všech 5 otázek z posudků — to je **správně**. Stefano jen měl k otázkám doplnit klíčová slova k odpovědím (např. „bcrypt + prepared statements" k otázce 1).
+
+**Doporučení:** ponechat slide a doplnit klíčová slova k odpovědím — viz `obhajoba/slides-copypaste.md` slide 6.
 
 ---
 

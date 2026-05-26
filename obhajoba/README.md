@@ -52,39 +52,50 @@
 ┌─────────────────────────────────────────────────────────────┐
 │  setup (předem)    10 min prezentace        ~5 min Q&A      │
 │  ─────────────     ──────────────────       ─────────       │
-│  - cache web       - 8 slidů                - 5 otázek      │
-│  - cue cards       - ~1:15 min/slide        - rozšíření     │
+│  - cache web       - 7 slidů (vzor ORBIS)   - 5 otázek      │
+│  - cue cards       - ~1:25 min/slide        - rozšíření     │
 │  - voda            - mluvit z hlavy         - live demo     │
 └─────────────────────────────────────────────────────────────┘
 ```
+
+### ⚠️ Závazná struktura podle školního vzoru
+
+Škola ORBIS poskytla vzor `../Orbis prezentace - final_vzor.pptx` se 7 slidy:
+1. **Titulní** — název, autor, vedoucí
+2. **Úvod** — proč téma, cíl, postup
+3. **Praktická část** — charakteristika + analytické metody + proč tyto metody
+4. **Projektové řešení** — hlavní zásady, přínos praxi, závěry *(odpovědi na 4 z 5 otázek z posudků)*
+5. **Závěr** — cíle, obohacení, pokračování, osobní přínos
+6. **Otázky** — otázky z posudků + klíčová slova k odpovědím *(vzor přímo doporučuje!)*
+7. **Děkuji za pozornost** — poděkování + URL webu
+
+Stávající Stefanův PPTX má 10 slidů (rozšíření) — slidy 6 a 7 obsahují nevyplněné navádějící otázky ze šablony. Doporučení: **přepsat na 7 slidů podle vzoru** generováním přes Marp z `prezentace.md`.
 
 ---
 
 ## Co opravit v PPTX před obhajobou
 
-Hlavní body — detailní rozbor stávajícího PPTX viz `../priprava-prezentace.md`:
+Stefanův stávající PPTX má 10 slidů z školního 7slide vzoru, ale slidy 6 a 7 obsahují **nevyplněné navádějící otázky** ze šablony (NE klasické placeholdery — jsou to otázky, na které má Stefano vlastními slovy odpovědět).
 
-- 🔴 **Slide 6** — kompletně nahradit šablonový text vlastním obsahem (přejmenovat ze „Charakteristika tématu" na „Použité analytické metody")
-- 🔴 **Slide 7** — kompletně nahradit šablonový text (architektura, klíčové funkce, bezpečnost)
-- 🔴 **Slide 8** — smazat poslední větu „V čem přesně spočívá Váš osobní přínos…" (je to placeholder ze šablony)
-- 🟡 **Slide 2** — doplnit jmenovitě technologie: PHP + SQLite (ne jen „PhpStorm")
-- 🟡 **Slide 5** — doplnit konkrétní jména konkurenčních webů, nástroje testování
-- 🟡 **Slide 9** — zvážit odebrání (otázky komise nepotřebují vidět) NEBO přejmenovat na „Limity projektu a možná rozšíření"
+### Dvě cesty
 
-### Alternativa — vygenerovat novou prezentaci
-
-Pokud Stefano chce **úplně novou prezentaci** podle připraveného plánu:
-
-**Cesta A — Marp → PPTX (rychlejší, ~15 min):**
+**Cesta A (DOPORUČENO) — vygenerovat novou prezentaci podle vzoru (7 slidů, ~15 min):**
 ```bash
 npm install -g @marp-team/marp-cli
 cd obhajoba/
 marp prezentace.md --pptx --output prezentace-nova.pptx
 ```
-Pak nahrát do Google Slides nebo otevřít v PowerPointu a doplnit screenshoty.
+Pak otevřít v PowerPointu a doplnit screenshoty z webu. Tato cesta zaručí přesnou shodu se školním vzorem.
 
-**Cesta B — ručně v Google Slides / PowerPointu (~60 min):**
-Podle `slides-copypaste.md` — pro každý slide paste TITULEK + OBSAH + SPEAKER NOTES.
+**Cesta B — opravit stávající 10slide PPTX (~60 min):**
+- 🔴 **Slide 6** (duplicitní „Charakteristika tématu") — nahradit textem nového slidu 3 (Vlastní analýzy, proč tyto metody)
+- 🔴 **Slide 7** („Projektové řešení") — nahradit šablonový text obsahem nového slidu 4 (Zásady, přínos, závěry)
+- 🔴 **Slide 8** („Závěr") — smazat poslední větu „V čem přesně spočívá Váš osobní přínos…" (šablona) a nahradit obsahem nového slidu 5
+- ✅ **Slide 9** („Otázky") — **ponechat!** Vzor ho přímo doporučuje. Jen doplnit klíčová slova k odpovědím
+- 🟡 **Slide 2** — doplnit jmenovitě technologie: PHP + SQLite
+- 🟡 **Slide 5** — doplnit konkrétní jména konkurenčních webů, nástroje testování
+
+Detailní rozbor stávajícího PPTX viz `../priprava-prezentace.md`.
 
 ---
 
