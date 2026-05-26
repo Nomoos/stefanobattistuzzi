@@ -369,10 +369,12 @@ Stefanův stávající PPTX má 10 slidů (rozšíření vzoru o postup tvorby +
 - Závazný školní vzor: `../Orbis prezentace - final_vzor.pptx`
 - Plná maturitní práce: `../2025-26_S4C_MP_IT_Stefano_Battistuzzi.pdf` (38 stran)
 - Zdroják projektu: `../battistuzzi_prace.zip`
+- **Opravený PPTX (Cesta B, 10 slidů):** `../battistuzzi_obhajoba_OPRAVENO.pptx`
 - Posudky: [`POSUDKY.md`](./POSUDKY.md)
 - Detailní odpovědi na 5 otázek: [`HANDOUT-OBHAJOBA.md`](./HANDOUT-OBHAJOBA.md)
+- **Standalone slide s 5 otázkami (k tisku):** [`otazky-slide.md`](./otazky-slide.md)
 - Cue cards k tisku: [`CUE-CARDS.md`](./CUE-CARDS.md)
 - Stručný handout pro komisi: [`STRUCNY-PREHLED.md`](./STRUCNY-PREHLED.md)
-- Marp source pro generování PPTX: [`prezentace.md`](./prezentace.md)
+- Marp source pro generování PPTX (Cesta A, 7 slidů): [`prezentace.md`](./prezentace.md)
 - Copy-paste pro PowerPoint: [`slides-copypaste.md`](./slides-copypaste.md)
 - Maturitní okruhy 18 a 19 (rozšířená příprava): [`webove_aplikace_a_softwarove_inzenyrstvi.md`](./webove_aplikace_a_softwarove_inzenyrstvi.md)

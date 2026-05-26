@@ -19,6 +19,7 @@
 | **`HANDOUT-OBHAJOBA.md`** | Detailní odpovědi na všech 5 otázek z posudků + rozšiřující otázky | Stefano (interní příprava) — **NE komisi** |
 | **`STRUCNY-PREHLED.md`** | 1 strana A4 — krátký handout pro komisi | **KOMISI** (volitelně k vytisknutí) |
 | **`CUE-CARDS.md`** | Krátké taháky s klíčovými větami, do ruky | Stefano (vytisknout do ruky) |
+| **`otazky-slide.md`** | Standalone Markdown slide se všemi 5 otázkami z posudků + klíčovými slovy k odpovědím | Stefano (k tisku A4) |
 | **`webove_aplikace_a_softwarove_inzenyrstvi.md`** | **Rozšířená příprava na okruhy 18 a 19** + sekce 20 aplikace teorie na CarzMeetz | Stefano (učení na ústní část) |
 | **`../priprava-prezentace.md`** | Analýza stávajícího PPTX + návrhy úprav slidů | Stefano (úpravy prezentace) |
 | **`../priprava-otazka-18-webove-aplikace.md`** | Obecná příprava na okruh 18 | Stefano (učení) |
@@ -87,13 +88,17 @@ marp prezentace.md --pptx --output prezentace-nova.pptx
 ```
 Pak otevřít v PowerPointu a doplnit screenshoty z webu. Tato cesta zaručí přesnou shodu se školním vzorem.
 
-**Cesta B — opravit stávající 10slide PPTX (~60 min):**
-- 🔴 **Slide 6** (duplicitní „Charakteristika tématu") — nahradit textem nového slidu 3 (Vlastní analýzy, proč tyto metody)
-- 🔴 **Slide 7** („Projektové řešení") — nahradit šablonový text obsahem nového slidu 4 (Zásady, přínos, závěry)
-- 🔴 **Slide 8** („Závěr") — smazat poslední větu „V čem přesně spočívá Váš osobní přínos…" (šablona) a nahradit obsahem nového slidu 5
-- ✅ **Slide 9** („Otázky") — **ponechat!** Vzor ho přímo doporučuje. Jen doplnit klíčová slova k odpovědím
-- 🟡 **Slide 2** — doplnit jmenovitě technologie: PHP + SQLite
-- 🟡 **Slide 5** — doplnit konkrétní jména konkurenčních webů, nástroje testování
+**Cesta B — opravit stávající 10slide PPTX:**
+
+✅ **HOTOVO** — soubor `../battistuzzi_obhajoba_OPRAVENO.pptx` byl vygenerován automaticky přes python-pptx s těmito úpravami (formátování, fonty, barvy a obrázky zachované):
+
+- 🔴 **Slide 6** (přejmenováno na „Použité analytické metody") — šablonový text → 4 konkrétní metody
+- 🔴 **Slide 7** (Projektové řešení) — šablonový text → 5 zásad pokrývajících V1, V2, V3, O2
+- 🔴 **Slide 8** (Závěr) — placeholder otázka → vlastní odpověď o přínosu
+- ✅ **Slide 9** (Otázky) — ponechány + doplněna klíčová slova k odpovědím
+- 🟡 **Slide 2** — „PhpStorm" → „PHP + SQLite + IDE PhpStorm"
+- 🟡 **Slide 3** — „Tvorba databází" → „Návrh databáze" (singulár)
+- 🟡 **Slide 5** — 3 obecné body → 5 konkrétních (Srazy.info, DevTools, W3C)
 
 Detailní rozbor stávajícího PPTX viz `../priprava-prezentace.md`.
 
