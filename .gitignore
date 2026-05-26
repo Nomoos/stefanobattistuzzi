@@ -1,0 +1,17 @@
+# Tangent.dev editor metadata
+.tangent/
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor swap/temp files
+*~
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Local logs
+*.log
